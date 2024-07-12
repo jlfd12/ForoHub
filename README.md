@@ -19,10 +19,38 @@ Foro Hub creado como parte del Challenge ONE de Alura
 <h1>Uso</h1>
 
 <p>Descargar la carpeta de archivos del repositorio y abrir en el IDE de preferencia, en este caso se usó IntelliJ (https://www.jetbrains.com/es-es/idea/). Descargar ademas MySQL y el administrador de API de su preferencia, por ejemplo, Postman o Insomnia, en este caso se hizo uso de Insomnia. 
-En MySQL Workbench crear un nuevo schema con el nombre 'forohubapi' y agregar los datos de usuario y contraseña creados en MySQL a las variables de entorno en las propiedades del sistema de nuestra PC. Dentro de las propiedades de la API se puede 
+En MySQL Workbench crear un nuevo schema con el nombre 'forohubapi' y agregar los datos de usuario y contraseña creados en MySQL a las variables de entorno en las propiedades del sistema de nuestra PC. Dentro de las propiedades de la API se puede visualizar la forma en que están señalados estos datos para agregarlos a las variables de entorno o editarlos. Además de la api key que por defecto está como 123456 pero puede modificarse o borrarse para mayor seguridad:
+  spring.application.name=API Foro Hub
+  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  spring.datasource.url=jdbc:mysql://localhost:3306/forohubapi
+  spring.datasource.username=${DB_USER}
+  spring.datasource.password=${DB_PASSWORD}
+  spring.datasource.host=${DB_HOST}
+
+
+  api.security.token.secret=${JWT_SECRET:123456} <-------PUEDEN BORRARSE LOS NÚMEROS PARA MAYOR SEGURIDAD PERO ANTES DEBEN AGREGARSE A LAS VARIABLES DE ENTORNO.
+
 A continuación se inicia el programa y se verifica que haya iniciado correctamente como se puede ver a continuación.
   
   ![logs](https://github.com/user-attachments/assets/8e139c6c-e914-47f2-a7d8-5b2e352e800c)
+
+Una vez iniciado se crea un request POST en Insomnia con el siguiente URL: http://localhost:8080/auth para obtener el token de autorización. En el body se pone en formato json los datos de acceso:
+  {
+    "email": "alumno@email.com",
+    "contrasena": "123456"
+  }
+
+se da SEND y se obtiene el token.
+
+  ![auth credenciales](https://github.com/user-attachments/assets/a42d6739-a828-4526-8ae7-c182f47e20ae)
+
+  ![token](https://github.com/user-attachments/assets/0d01a4e5-b0e6-481d-8e5e-2acb50bac22c)
+
+Inicialmente los datos de acceso mostrados son únicos para el funcionamiento de la API. Para agregar más, se crea una migración en la carpeta db.migrations siguiendo el formato de la migraciones anteriores (Vx__insert-
+
+  
+
+
 
 
 
