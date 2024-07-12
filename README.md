@@ -13,13 +13,20 @@ Foro Hub creado como parte del Challenge ONE de Alura
 </ol>
 
 <h1 font-weight="bold">Descripción</h1>
-<p>Este proyecto muestra una API Rest de un foro. Con la ayuda de Insomnia (https://insomnia.rest/), una herramienta de interaccion con servicios de API, y MySQL (https://www.mysql.com/) para el manejo de base de datos esta API permite registrar un topico, actualizarlo y eliminarlo, además de visualizar alguno en especifico o todos los topicos registrados. Cada topico cuenta con id, titulo, mensaje, curso y fecha de creación.
+<p>Este proyecto muestra una API Rest de un foro. Con la ayuda de Insomnia (https://insomnia.rest/), una herramienta de interaccion con servicios de API, y MySQL (https://www.mysql.com/) para el manejo de base de datos con esta API se puede registrar un topico, actualizarlo y eliminarlo, además de visualizar alguno en especifico o todos los topicos registrados. Cada topico cuenta con id, titulo, mensaje, curso y fecha de creación. El hacer un request está protegido y requiere autorización por lo que cuenta además con la opcion de crear un token de usuario para poder acceder a las funciones.
 </p>
 
 <h1>Uso</h1>
 
 <p>Descargar la carpeta de archivos del repositorio y abrir en el IDE de preferencia, en este caso se usó IntelliJ (https://www.jetbrains.com/es-es/idea/). Descargar ademas MySQL y el administrador de API de su preferencia, por ejemplo, Postman o Insomnia, en este caso se hizo uso de Insomnia. 
-En MySQL Workbench crear un nuevo schema con el nombre 'forohubapi'.</p>
+En MySQL Workbench crear un nuevo schema con el nombre 'forohubapi' y agregar los datos de usuario y contraseña creados en MySQL a las variables de entorno en las propiedades del sistema de nuestra PC. Dentro de las propiedades de la API se puede 
+A continuación se inicia el programa y se verifica que haya iniciado correctamente como se puede ver a continuación.
+  
+  ![logs](https://github.com/user-attachments/assets/8e139c6c-e914-47f2-a7d8-5b2e352e800c)
+
+
+
+</p>
 
 <h1>Caracteristicas y Demostración</h1>
 
